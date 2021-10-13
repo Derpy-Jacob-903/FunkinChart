@@ -15,11 +15,13 @@ const arrowUp = [
 ];
 
 const arrowLeft = arrowUp.map((c) => [c[1], c[0]]);
+const arrowAltLeft = arrowUp.map((c) => [c[1], c[0]]);
 const arrowDown = arrowUp.map((c) => [c[0], 1 - c[1]]);
 const arrowRight = arrowLeft.map((c) => [1 - c[0], c[1]]);
-const arrows = [arrowLeft, arrowDown, arrowUp, arrowRight];
-const arrowFillStyles = ["#C24B99", "#00FFFF", "#12FA05", "#F9393F"];
-const arrowStrokeStyles = ["#3C1F56", "#1542B7", "#0A4447", "#651038"];
+const arrowAltRight = arrowLeft.map((c) => [1 - c[0], c[1]]);
+const arrows = [arrowAltLeft, arrowDown, arrowRight, arrowLeft, arrowUp, arrowAltRight];
+const arrowFillStyles = ["#FFFF00", "#C24B99", "#00FFFF", "#12FA05", "#F9393F", "#0000FF"];
+const arrowStrokeStyles = ["#FFFF00", "#3C1F56", "#1542B7", "#0A4447", "#651038", "#0000FF" c];
 
 class Draw {
     constructor(canvas) {
