@@ -110,14 +110,14 @@ class Chart {
 
     _filterNotesFirstHalf(notes) {
         return notes
-            .filter((n) => n[1] < 4)
+            .filter((n) => n[1] < 6)
             .map((n) => ({ position: n[0], key: n[1], sustain: n[2] }));
     }
 
     _filterNotesSecondHalf(notes) {
         return notes
-            .filter((n) => n[1] >= 4)
-            .map((n) => ({ position: n[0], key: n[1] - 4, sustain: n[2] }));
+            .filter((n) => n[1] >= 6)
+            .map((n) => ({ position: n[0], key: n[1] - 6, sustain: n[2] }));
     }
 
     getMustHitSection(section = this.currentSection) {
