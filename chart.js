@@ -111,13 +111,13 @@ class Chart {
     _filterNotesFirstHalf(notes) {
         return notes
             .filter((n) => n[1] < 4)
-            .map((n) => ({ position: n[0], key: n[1], sustain: n[2] }));
+            .map((n) => ({ position: n[0], key: n[1], sustain: n[2], type: n[3] }));
     }
 
     _filterNotesSecondHalf(notes) {
         return notes
             .filter((n) => n[1] >= 4)
-            .map((n) => ({ position: n[0], key: n[1] - 4, sustain: n[2] }));
+            .map((n) => ({ position: n[0], key: n[1] - 4, sustain: n[2], type: n[3] }));
     }
 
     getMustHitSection(section = this.currentSection) {
@@ -159,6 +159,7 @@ class Chart {
                 }
                 const notePosition = note[0];
                 const sustainDuration = note[2];
+                const notetypeamongus = note[3];
                 const fullNoteDuration = notePosition + noteDuration + sustainDuration;
 
                 if (end > fullNoteDuration) {
